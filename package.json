@@ -1,0 +1,19 @@
+{
+    "name": "petclinic",
+    "version": "1.0.0",
+    "description": "PetClinic Monilitico",
+    "main": "index.js",
+    "private": true,
+    "type": "module",
+    "scripts": {},
+    "author": "Keuller Magalhaes",
+    "license": "ISC",
+    "engines": {
+        "node": ">=16.X <=18.X"
+    },
+    "packageManager": "pnpm@8.6.5",
+    "workspaces": [
+        "apps/*",
+        "pacakges/*"
+    ]
+}
