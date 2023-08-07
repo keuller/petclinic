@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "declaration": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "strict": true,
+        "noEmit": true,
+        "types": [
+            "node",
+            "vite/client"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
