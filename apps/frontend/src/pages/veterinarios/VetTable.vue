@@ -1,7 +1,13 @@
 <script setup lang="ts">
-    defineProps({
-        data: Array<{ id: string, nome: string, especialidades: string[] }>
-    })
+    type Vet = {
+        id: string,
+        nome: string,
+        especialidades: string[]
+    }
+
+    defineProps<{
+        data: Array<Vet>
+    }>();
 </script>
 
 <template>
