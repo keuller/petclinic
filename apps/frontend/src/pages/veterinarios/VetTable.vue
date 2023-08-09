@@ -1,12 +1,8 @@
 <script setup lang="ts">
-    type Vet = {
-        id: string,
-        nome: string,
-        especialidades: string[]
-    }
+    import type { Veterinario } from '@petclinic/vets';
 
     defineProps<{
-        data: Array<Vet>
+        data: Array<Veterinario>
     }>();
 </script>
 

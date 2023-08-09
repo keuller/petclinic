@@ -5,7 +5,9 @@
     "main": "index.js",
     "private": true,
     "type": "module",
-    "scripts": {},
+    "scripts": {
+        "dev": "pnpm --filter './apps/*' dev"
+    },
     "author": "Keuller Magalhaes",
     "license": "ISC",
     "engines": {

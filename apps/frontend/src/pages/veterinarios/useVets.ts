@@ -1,14 +1,28 @@
+import { ref } from 'vue';
+import type { Veterinario } from "@petclinic/vets";
 
-const FIXTURES = [
-    { id: '4878', nome: 'Veterinario Test 1', especialidades: ['cirurgia'] },
-    { id: '3452', nome: 'Veterinario Test 2', especialidades: ['radiologia'] },
-    { id: '1847', nome: 'Veterinario Test 3', especialidades: ['dentista'] },
-    { id: '8492', nome: 'Veterinario Test 4', especialidades: [''] },
-    { id: '9823', nome: 'Veterinario Test 5', especialidades: ['cirurgia', 'obstetricia'] }
-]
+async function fetchVets(): Promise<Array<Veterinario>> {
+    const resp = await fetch('/api/vets');
+    if (resp.status === 200) {
+        return resp.json();
+    }
+
+    console.log('fail to load veterinarios -', resp.statusText);
+    return [];
+}
 
 export default function useVets() {
+    const loading = ref<boolean>(false);
+    const data = ref<Veterinario[]>([]);
+
     return {
-        data: FIXTURES
+        loading,
+        loadVets() {
+            loading.value = true;
+            fetchVets()
+                .then(vets => data.value = vets)
+                .finally(() => loading.value = false);
+        },
+        data
     }
 }
