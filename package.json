@@ -6,7 +6,11 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "dev": "pnpm --filter './apps/*' dev"
+        "clean:apps": "pnpm --filter './apps/*' clean",
+        "clean:mods": "pnpm --filter './packages/*' clean",
+        "dev": "pnpm --filter './apps/*' dev",
+        "build:apps": "pnpm --filter './apps/*' build",
+        "build:mods": "pnpm --filter './packages/*' build"
     },
     "author": "Keuller Magalhaes",
     "license": "ISC",
