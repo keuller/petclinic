@@ -1,0 +1,25 @@
+version: '3'
+services:
+    db:
+        image: postgres
+        restart: always
+        container_name: petclinic-db
+        volumes:
+            - petclinic:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+        environment:
+            - POSTGRES_DB=petclinic
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres123
+
+    adminer:
+        image: adminer
+        restart: always
+        container_name: adminer
+        ports:
+            - '8080:8080'
+
+volumes:
+    petclinic:
+        external: true

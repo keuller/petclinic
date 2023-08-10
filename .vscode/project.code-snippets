@@ -1,0 +1,35 @@
+{
+    "Vue Single File Component": {
+        "scope": "vue,vue-html,javascript,typescript,css",
+        "prefix": "sfc",
+        "description": "Vue Single File Component",
+        "body": [
+            "<script setup lang=\"ts\">",
+            "</script>",
+            "",
+            "<template>",
+            "    $0",
+            "</template>",
+            "",
+            "<style scoped>",
+            "</style>"
+        ]
+    },
+    "koa-router": {
+        "scope": "javascript,typescript",
+        "prefix": "krt",
+        "description": "",
+        "body": [
+            "import { Context } from 'koa';",
+            "import Router from 'koa-router';",
+            "",
+            "const router = new Router();",
+            "",
+            "router.get('/', (ctx: Context) => {",
+            "    $1",
+            "})",
+            "",
+            "export default router;"
+        ]
+    }
+}
