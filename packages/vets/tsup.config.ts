@@ -5,6 +5,6 @@ export default defineConfig({
     dts: './src/index.ts',
     outDir: 'dist',
     format: 'esm',
-    clean: true,
+    splitting: false,
     minify: true
 })
