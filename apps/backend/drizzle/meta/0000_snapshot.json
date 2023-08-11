@@ -1,0 +1,149 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "id": "666c471e-c6ae-41b5-b6dd-2b09c948f278",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "especialidades": {
+      "name": "especialidades",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(10)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "veterinarios": {
+      "name": "veterinarios",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "char(10)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "endereco": {
+          "name": "endereco",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cidade": {
+          "name": "cidade",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "idx_vets_email": {
+          "name": "idx_vets_email",
+          "columns": [
+            "email"
+          ],
+          "isUnique": true
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "vets_especs": {
+      "name": "vets_especs",
+      "schema": "",
+      "columns": {
+        "vet_id": {
+          "name": "vet_id",
+          "type": "char(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "espec_id": {
+          "name": "espec_id",
+          "type": "char(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "vets_especs_vet_id_veterinarios_id_fk": {
+          "name": "vets_especs_vet_id_veterinarios_id_fk",
+          "tableFrom": "vets_especs",
+          "tableTo": "veterinarios",
+          "columnsFrom": [
+            "vet_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "vets_especs_espec_id_especialidades_id_fk": {
+          "name": "vets_especs_espec_id_especialidades_id_fk",
+          "tableFrom": "vets_especs",
+          "tableTo": "especialidades",
+          "columnsFrom": [
+            "espec_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "vets_especs_vet_id_espec_id": {
+          "name": "vets_especs_vet_id_espec_id",
+          "columns": [
+            "vet_id",
+            "espec_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
