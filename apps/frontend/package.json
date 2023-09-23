@@ -12,17 +12,17 @@
     "dependencies": {
         "@petclinic/vets": "workspace:^1.0.0",
         "vue": "^3.3.4",
-        "vue-router": "^4.2.4"
+        "vue-router": "^4.2.5"
     },
     "devDependencies": {
-        "@vitejs/plugin-vue": "^4.2.3",
+        "@vitejs/plugin-vue": "^4.3.4",
         "@vue/tsconfig": "^0.4.0",
-        "autoprefixer": "^10.4.14",
-        "postcss": "^8.4.27",
+        "autoprefixer": "^10.4.16",
+        "postcss": "^8.4.30",
         "rimraf": "^5.0.1",
         "tailwindcss": "^3.3.3",
-        "typescript": "^5.1.6",
+        "typescript": "^5.2.2",
         "vite": "^4.4.9",
-        "vite-tsconfig-paths": "^4.2.0"
+        "vite-tsconfig-paths": "^4.2.1"
     }
 }

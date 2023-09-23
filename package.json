@@ -15,16 +15,16 @@
     "author": "Keuller Magalhaes",
     "license": "ISC",
     "engines": {
-        "node": ">=16.X <=18.X"
+        "node": "<=18.X"
     },
-    "packageManager": "pnpm@8.6.5",
+    "packageManager": "pnpm@8.7.5",
     "workspaces": [
         "apps/*",
-        "pacakges/*"
+        "packages/*"
     ],
     "devDependencies": {
         "rimraf": "^5.0.1",
-        "typescript": "^5.1.6",
+        "typescript": "^5.2.2",
         "vite": "^4.4.9"
     }
 }

@@ -1,0 +1,29 @@
+{
+    "name": "@petclinic/clientes",
+    "version": "1.0.0",
+    "description": "Modulo de Clientes",
+    "main": "index.js",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "clean": "rimraf dist",
+        "dev": "tsup --watch",
+        "build": "tsup"
+    },
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "drizzle-orm": "^0.28.2"
+    },
+    "devDependencies": {
+        "rimraf": "^5.0.1",
+        "tsup": "^7.2.0",
+        "typescript": "^5.1.6"
+    },
+    "exports": {
+        "import": "./dist/index.js",
+        "require": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ]
+}
